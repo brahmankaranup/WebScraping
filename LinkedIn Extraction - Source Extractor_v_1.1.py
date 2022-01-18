@@ -48,7 +48,9 @@ while(i < 2):
 	start = time.time()
 	i_scroll = 0
 	f_scroll = 1000
-
+	
+	#Scroll down to the end of the page to get the entire source code loaded into the browser
+	
 	while True:
 
 		driver.execute_script(f"window.scrollTo({i_scroll}, {f_scroll})")
