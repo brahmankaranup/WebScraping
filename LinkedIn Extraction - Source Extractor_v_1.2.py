@@ -15,13 +15,14 @@ driver = webdriver.Chrome("C:/Users/brahm/Desktop/Web Scraping/chromedriver.exe"
 driver.get("https://www.linkedin.com/uas/login?fromSignIn=true&trk=cold_join_sign_in")
 
 #Sign-in Automation
-
+Username = input("Enter your e-mail/username: ")
+Pass = inpout("Enter your password: ")
 username = driver.find_element(By.ID,"username")
-username.send_keys("ankurpankur4@gmail.com")
+username.send_keys("Username")
 username.send_keys(Keys.RETURN)
 
 password = driver.find_element(By.ID,"password")
-password.send_keys("ankur@pankur")
+password.send_keys("Pass")
 password.send_keys(Keys.RETURN)
 
 #wait time after page loading
