@@ -15,8 +15,8 @@ driver = webdriver.Chrome("C:/Users/brahm/Desktop/Web Scraping/chromedriver.exe"
 driver.get("https://www.linkedin.com/uas/login?fromSignIn=true&trk=cold_join_sign_in")
 
 #Sign-in Automation
-email = "ankurpankur4@gmail.com"
-password = "ankur@pankur"
+email = "email"
+password = "password"
 username = driver.find_element(By.ID,"username")
 username.send_keys(email)
 username.send_keys(Keys.RETURN)
