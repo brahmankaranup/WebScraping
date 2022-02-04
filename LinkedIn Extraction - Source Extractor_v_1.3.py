@@ -15,14 +15,14 @@ driver = webdriver.Chrome("C:/Users/brahm/Desktop/Web Scraping/chromedriver.exe"
 driver.get("https://www.linkedin.com/uas/login?fromSignIn=true&trk=cold_join_sign_in")
 
 #Sign-in Automation
-email = "email"
-password = "password"
+email = "ankurpankur4@gmail.com"
+pwd = "ankur@pankur"
 username = driver.find_element(By.ID,"username")
 username.send_keys(email)
 username.send_keys(Keys.RETURN)
 
 password = driver.find_element(By.ID,"password")
-password.send_keys(password)
+password.send_keys(pwd)
 password.send_keys(Keys.RETURN)
 
 #wait time after page loading
@@ -31,7 +31,7 @@ time.sleep(10)
 
 #get dataset file with names and url(s)
 #add your test set path here
-df = pd.read_csv("C:/Users/brahm/Desktop/Web Scraping/linkedIn_Connections_Data.csv", encoding = 'latin-1')
+df = pd.read_csv("C:/Users/brahm/Desktop/Web Scraping/Divided Dataset/YASHWANT_test_set.csv")
 
 #loop for iterating through dataset and extraction of page source
 i = 0
@@ -40,8 +40,8 @@ while(i <= 50):
 
 	# Get Name and URL from each row
 
-	name = df['Column1'][i]
-	url = df['Column2'][i]
+	name = df['Name'][i]
+	url = df['URL'][i]
 	
 	# open given URL
 
@@ -58,23 +58,25 @@ while(i <= 50):
 		driver.execute_script(f"window.scrollTo({i_scroll}, {f_scroll})")
 		i_scroll = f_scroll
 		f_scroll += 1000
-		time.sleep(1)
+		time.sleep(5)
 		end = time.time()
 
 		if round(end - start) > 20 :
 			break
 
-	time.sleep(random.randint(30,120))
+	pg_src = driver.page_source
+
+	time.sleep(5)
 
 	# get source code of page as text
 
-	pg_src = driver.page_source
+	
 
 	# create file name and path for text file
 
 	file_name = name+'.txt'
 	#add the file path of the output folder
-	file_path = "C:/Users/brahm/Desktop/New folder(3)"+file_name
+	file_path = "C:/Users/brahm/Desktop/Web Scraping/Scraping/New folder (5)/"+file_name+
 
 	# save source code into text file
 
