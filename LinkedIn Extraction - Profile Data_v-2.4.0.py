@@ -27,7 +27,7 @@ for i in range(50) :
 	print(name)
 
     # creating filename with .txt extension
-	file_name = name+'.txt'
+	file_name = name+'.txt.txt'
 
  	# creating filepath for each file to read file
 	file_path = "C:/Users/brahm/Desktop/Web Scraping/Scraping/new1/"+file_name
