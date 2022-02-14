@@ -94,7 +94,7 @@ for i in range(50) :
 
 	No_of_Connections = no_conns
 
-	Residues = []
+	Residues = {}
 	elements = soup.find_all('li',{'class':"artdeco-list__item pvs-list__item--line-separated pvs-list__item--one-column"})
 	for element in elements:
 		all_data = element.find_all('span',{'aria-hidden':"true"})
